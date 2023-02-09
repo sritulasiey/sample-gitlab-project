@@ -1,0 +1,16 @@
+image: openjdk:19-jdk-alpine
+
+stages:
+	- build
+	- execute
+
+build:
+	stage: build
+	script: javac HelloGitLab.java
+	artifacts:
+	 paths:
+		- HelloGitLab.*
+
+execute:
+	stage: execute
+	script: java HelloGitLab
